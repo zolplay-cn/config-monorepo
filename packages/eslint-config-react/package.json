@@ -1,14 +1,12 @@
 {
   "name": "@zolplay/eslint-config-react",
+  "version": "1.0.1",
   "main": "index.js",
   "files": [
     "index.js"
   ],
   "scripts": {
     "lint": "eslint . --config=index.js"
-  },
-  "peerDependencies": {
-    "eslint": ">=7.4.0"
   },
   "dependencies": {
     "@zolplay/eslint-config-ts": "workspace:*",
@@ -20,5 +18,7 @@
     "react": "^18.2.0",
     "typescript": "^5.0.4"
   },
-  "version": "1.0.1"
+  "peerDependencies": {
+    "eslint": ">=7.4.0"
+  }
 }

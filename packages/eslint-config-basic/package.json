@@ -1,14 +1,12 @@
 {
   "name": "@zolplay/eslint-config-basic",
+  "version": "1.0.1",
   "main": "index.js",
   "files": [
     "*.js"
   ],
   "scripts": {
     "lint": "eslint . --config=index.js"
-  },
-  "peerDependencies": {
-    "eslint": ">=7.4.0"
   },
   "dependencies": {
     "eslint-config-prettier": "^8.8.0",
@@ -31,5 +29,7 @@
   "devDependencies": {
     "eslint": "^8.42.0"
   },
-  "version": "1.0.1"
+  "peerDependencies": {
+    "eslint": ">=7.4.0"
+  }
 }
