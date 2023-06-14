@@ -242,11 +242,6 @@ module.exports = {
       { allowMultiplePropertiesPerLine: true },
     ],
     'one-var': ['error', { initialized: 'never' }],
-    'operator-linebreak': [
-      'error',
-      'after',
-      { overrides: { '?': 'before', ':': 'before', '|>': 'before' } },
-    ],
     'padded-blocks': [
       'error',
       { blocks: 'never', switches: 'never', classes: 'never' },

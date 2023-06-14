@@ -309,7 +309,7 @@ module.exports = {
     'prefer-exponentiation-operator': 'error',
     'prefer-rest-params': 'error',
     'prefer-spread': 'error',
-    'prefer-template': 'error',
+    'prefer-template': 'off',
 
     // best-practice
     'array-callback-return': 'error',
@@ -326,7 +326,6 @@ module.exports = {
     'vars-on-top': 'error',
     'require-await': 'off',
     'no-return-assign': 'off',
-    'operator-linebreak': ['error', 'before'],
     'max-statements-per-line': ['error', { max: 1 }],
 
     // node
@@ -375,9 +374,8 @@ module.exports = {
     'yml/no-empty-document': 'off',
 
     // antfu
-    'antfu/if-newline': 'error',
     'antfu/import-dedupe': 'error',
-    'antfu/top-level-function': 'error',
-    // 'antfu/prefer-inline-type-import': 'error',
+    'antfu/top-level-function': 'off',
+    'antfu/if-new-line': 'off',
   },
 }
