@@ -8,7 +8,7 @@ module.exports = {
     React: true,
     JSX: true,
   },
-  extends: '@zolplay/eslint-config-react',
+  extends: ['@zolplay/eslint-config-react', 'next'],
   settings: {
     react: {
       version: 'detect',

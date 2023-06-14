@@ -39,9 +39,7 @@ module.exports = {
         checkForEach: false,
       },
     ],
-    'arrow-spacing': ['error', { before: true, after: true }],
-    'block-spacing': ['error', 'always'],
-    'brace-style': ['error', '1tbs', { allowSingleLine: true }],
+
     camelcase: [
       'error',
       {
@@ -60,15 +58,13 @@ module.exports = {
         functions: 'never',
       },
     ],
-    'comma-spacing': ['error', { before: false, after: true }],
-    'comma-style': ['error', 'last'],
+
     'computed-property-spacing': [
       'error',
       'never',
       { enforceForClassMembers: true },
     ],
     'constructor-super': 'error',
-    curly: ['error', 'multi-line'],
     'default-case-last': 'error',
     'dot-location': ['error', 'property'],
     'dot-notation': ['error', { allowKeywords: true }],

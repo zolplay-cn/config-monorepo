@@ -310,7 +310,6 @@ module.exports = {
     'prefer-rest-params': 'error',
     'prefer-spread': 'error',
     'prefer-template': 'error',
-    'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
 
     // best-practice
     'array-callback-return': 'error',
