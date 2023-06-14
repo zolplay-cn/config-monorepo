@@ -1,8 +1,8 @@
 
 
-## Get Start
+## Getting Started
 
-### Install
+### Installation
 
 ```shell
 pnpm i -D @zolplay/eslint-config @zolplay/prettier-config
@@ -13,7 +13,7 @@ pnpm i -D @zolplay/eslint-config @zolplay/prettier-config
 ``` js
 // .eslintrc.js
 
-// Only if you want a more strict ruleset
+// Only use if you want a stricter ruleset
 process.env.ESLINT_TSCONFIG = 'tsconfig.json'
 
 module.exports = {
@@ -25,11 +25,11 @@ module.exports = {
 ### Prettier
 
 ```js
-// .prettierrc
+// .prettierrc.js
 
 module.exports = {
   ...require('@zolplay/prettier-config')
-  // yours
+  // your configurations
 }
 
 ```
@@ -46,3 +46,9 @@ module.exports = {
   }
 }
 ```
+
+
+
+## Credit
+
+This project is inspired by https://github.com/antfu/eslint-config
