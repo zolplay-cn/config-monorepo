@@ -45,6 +45,7 @@ module.exports = {
     '!.vscode',
     // force exclude
     '.vitepress/cache',
+    '.turbo',
   ],
   plugins: [
     'html',
