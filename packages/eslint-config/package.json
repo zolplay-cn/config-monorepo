@@ -1,0 +1,16 @@
+{
+  "name": "@zolplay/eslint-config",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "peerDependencies": {
+    "eslint": ">=7.4.0"
+  },
+  "dependencies": {
+    "@zolplay/eslint-config-next": "workspace:*"
+  },
+  "devDependencies": {
+    "eslint": "^8.42.0"
+  }
+}

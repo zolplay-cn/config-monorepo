@@ -1,0 +1,22 @@
+{
+  "name": "@zolplay/eslint-config-next",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "lint": "eslint . --config=index.js"
+  },
+  "peerDependencies": {
+    "next": ">=13"
+  },
+  "dependencies": {
+    "@zolplay/eslint-config-react": "workspace:*",
+    "eslint-config-next": "^13.4.5",
+    "eslint-plugin-prettier": "^4.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.42.0",
+    "typescript": "^5.0.4"
+  }
+}

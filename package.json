@@ -1,0 +1,16 @@
+{
+  "name": "@zolplay/config-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "lint": "eslint .",
+    "release": "bumpp --r && pnpm -r publish"
+  },
+  "devDependencies": {
+    "@zolplay/eslint-config": "workspace:*",
+    "@zolplay/prettier-config": "workspace:*",
+    "bumpp": "^9.1.1",
+    "eslint": "^8.42.0",
+    "typescript": "^5.0.4"
+  }
+}
