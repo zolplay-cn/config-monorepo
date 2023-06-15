@@ -1,3 +1,5 @@
+const pluginTailwindCSS = require('prettier-plugin-tailwindcss')
+
 module.exports = {
   arrowParens: 'always',
   semi: false,
@@ -6,8 +8,5 @@ module.exports = {
   jsxSingleQuote: false,
   tabWidth: 2,
   useTabs: false,
-  plugins: [
-    require('prettier-plugin-tailwindcss'),
-    require('@ianvs/prettier-plugin-sort-imports'),
-  ],
+  plugins: [pluginTailwindCSS, '@ianvs/prettier-plugin-sort-imports'],
 }
