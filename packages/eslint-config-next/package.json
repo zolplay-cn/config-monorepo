@@ -10,13 +10,13 @@
   },
   "dependencies": {
     "@zolplay/eslint-config-react": "workspace:*",
-    "eslint-config-next": "^13.4.5",
+    "eslint-config-next": "^13.4.7",
     "eslint-plugin-mdx": "^2.1.0",
     "eslint-plugin-prettier": "^4.2.1"
   },
   "devDependencies": {
-    "eslint": "^8.42.0",
-    "typescript": "^5.0.4"
+    "eslint": "^8.43.0",
+    "typescript": "^5.1.6"
   },
   "peerDependencies": {
     "next": ">=13"
