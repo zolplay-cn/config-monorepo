@@ -12,10 +12,5 @@
     "bumpp": "^9.1.1",
     "eslint": "^8.44.0",
     "typescript": "^5.1.6"
-  },
-  "pnpm": {
-    "overrides": {
-      "eslint-plugin-react-hooks": "^4.6.0"
-    }
   }
 }
