@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  eslint-plugin-react-hooks: ^4.6.0
-
 importers:
 
   .:
@@ -67,8 +64,8 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0
       eslint-plugin-prettier:
-        specifier: 5.0.0-alpha.2
-        version: 5.0.0-alpha.2(eslint-config-prettier@8.8.0)(eslint@8.44.0)(prettier@3.0.0)
+        specifier: ^4.2.1
+        version: 4.2.1(eslint-config-prettier@8.8.0)(eslint@8.44.0)(prettier@3.0.0)
       eslint-plugin-promise:
         specifier: ^6.1.1
         version: 6.1.1(eslint@8.44.0)
@@ -123,7 +120,7 @@ importers:
         specifier: ^7.32.2
         version: 7.32.2(eslint@8.44.0)
       eslint-plugin-react-hooks:
-        specifier: ^4.6.0
+        specifier: ^4.5.0
         version: 4.6.0(eslint@8.44.0)
     devDependencies:
       eslint:
@@ -1739,7 +1736,7 @@ packages:
       eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.61.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.44.0)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@8.44.0)
       eslint-plugin-react: 7.32.2(eslint@8.44.0)
-      eslint-plugin-react-hooks: 4.6.0(eslint@8.44.0)
+      eslint-plugin-react-hooks: 5.0.0-canary-7118f5dd7-20230705(eslint@8.44.0)
       typescript: 5.1.6
     transitivePeerDependencies:
       - eslint-import-resolver-webpack
@@ -2036,17 +2033,14 @@ packages:
     engines: {node: '>=5.0.0'}
     dev: false
 
-  /eslint-plugin-prettier@5.0.0-alpha.2(eslint-config-prettier@8.8.0)(eslint@8.44.0)(prettier@3.0.0):
-    resolution: {integrity: sha512-F6YBCbrRzvZwcINw3crm1+/uX/i+rJYaFErPtwCfUoPLywRfY7pwBtI3yMe5OpIotuaiws8cd29oM80ca6NQSQ==}
-    engines: {node: ^14.18.0 || >=16.0.0}
+  /eslint-plugin-prettier@4.2.1(eslint-config-prettier@8.8.0)(eslint@8.44.0)(prettier@3.0.0):
+    resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
+    engines: {node: '>=12.0.0'}
     peerDependencies:
-      '@types/eslint': '>=8.0.0'
-      eslint: '>=8.0.0'
+      eslint: '>=7.28.0'
       eslint-config-prettier: '*'
-      prettier: '>=3.0.0'
+      prettier: '>=2.0.0'
     peerDependenciesMeta:
-      '@types/eslint':
-        optional: true
       eslint-config-prettier:
         optional: true
     dependencies:
@@ -2054,7 +2048,6 @@ packages:
       eslint-config-prettier: 8.8.0(eslint@8.44.0)
       prettier: 3.0.0
       prettier-linter-helpers: 1.0.0
-      synckit: 0.8.5
     dev: false
 
   /eslint-plugin-promise@6.1.1(eslint@8.44.0):
@@ -2068,6 +2061,15 @@ packages:
 
   /eslint-plugin-react-hooks@4.6.0(eslint@8.44.0):
     resolution: {integrity: sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
+    dependencies:
+      eslint: 8.44.0
+    dev: false
+
+  /eslint-plugin-react-hooks@5.0.0-canary-7118f5dd7-20230705(eslint@8.44.0):
+    resolution: {integrity: sha512-AZYbMo/NW9chdL7vk6HQzQhT+PvTAEVqWk9ziruUoW2kAOcN5qNyelv70e0F1VNQAbvutOC9oc+xfWycI9FxDw==}
     engines: {node: '>=10'}
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
