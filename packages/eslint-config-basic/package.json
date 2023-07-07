@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-antfu": "^0.39.6",
+    "eslint-plugin-antfu": "^0.39.7",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-html": "^7.1.0",
     "eslint-plugin-import": "^2.27.5",
@@ -27,7 +27,7 @@
     "yaml-eslint-parser": "^1.2.2"
   },
   "devDependencies": {
-    "eslint": "^8.43.0"
+    "eslint": "^8.44.0"
   },
   "peerDependencies": {
     "eslint": ">=7.4.0"
