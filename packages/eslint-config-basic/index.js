@@ -221,10 +221,7 @@ module.exports = {
     'import/no-mutable-exports': 'error',
     'import/no-unresolved': 'off',
     'import/no-absolute-path': 'off',
-    'import/newline-after-import': [
-      'error',
-      { count: 1, considerComments: true },
-    ],
+    'import/newline-after-import': 'off',
 
     'unused-imports/no-unused-imports': 'error',
     'unused-imports/no-unused-vars': [
