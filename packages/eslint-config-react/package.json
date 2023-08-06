@@ -1,6 +1,6 @@
 {
   "name": "@zolplay/eslint-config-react",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "main": "index.js",
   "files": [
     "index.js"
