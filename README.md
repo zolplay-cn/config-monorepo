@@ -3,7 +3,7 @@
 ### Installation
 
 ```shell
-pnpm i -D @zolplay/eslint-config @zolplay/prettier-config
+pnpm i -D @zolplay/eslint-config @zolplay/prettier-config prettier@^2.8.8
 ```
 
 ### ESLint
