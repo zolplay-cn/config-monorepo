@@ -1,12 +1,17 @@
 {
   "name": "@zolplay/prettier-config",
   "version": "1.0.13",
-  "main": "index.js",
+  "main": "index.mjs",
   "files": [
-    "index.js"
+    "index.mjs",
+    "base.mjs"
   ],
   "dependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
-    "prettier-plugin-tailwindcss": "^0.3.0"
+    "@ianvs/prettier-plugin-sort-imports": "4.1.1",
+    "prettier": "^3.1.0",
+    "prettier-package-json": "2.8.0",
+    "prettier-plugin-autocorrect": "0.4.1",
+    "prettier-plugin-sh": "0.13.1",
+    "prettier-plugin-tailwindcss": "^0.5.7"
   }
 }
