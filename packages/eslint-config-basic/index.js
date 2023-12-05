@@ -12,7 +12,6 @@ module.exports = {
     'plugin:jsonc/recommended-with-jsonc',
     'plugin:yml/standard',
     'plugin:markdown/recommended',
-    'prettier',
   ],
   ignorePatterns: [
     '*.min.*',
@@ -46,14 +45,7 @@ module.exports = {
     '.vitepress/cache',
     '.turbo',
   ],
-  plugins: [
-    'html',
-    'unicorn',
-    'antfu',
-    'no-only-tests',
-    'unused-imports',
-    'prettier',
-  ],
+  plugins: ['html', 'unicorn', 'antfu', 'no-only-tests', 'unused-imports'],
   settings: {
     'import/resolver': {
       node: { extensions: ['.js', '.mjs'] },
@@ -215,13 +207,14 @@ module.exports = {
     },
   ],
   rules: {
-    'prettier/prettier': 'error',
     // import
     'import/first': 'error',
     'import/no-mutable-exports': 'error',
     'import/no-unresolved': 'off',
     'import/no-absolute-path': 'off',
     'import/newline-after-import': 'off',
+
+    'comma-dangle': 0,
 
     'unused-imports/no-unused-imports': 'error',
     'unused-imports/no-unused-vars': [

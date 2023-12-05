@@ -22,12 +22,15 @@ module.exports = {
 ### Prettier
 
 ```js
-// .prettierrc.js
+// .prettierrc.mjs
+import config from '@zolplay/prettier-config'
 
-module.exports = {
-  ...require('@zolplay/prettier-config'),
-  // your configurations
-}
+export default config
+
+// or
+import { factory } from '@zolplay/prettier-config'
+
+export default factory({ tailwindcss:true,importSort:true })
 ```
 
 ## IDE Settings
