@@ -1,6 +1,6 @@
 {
   "name": "@zolplay/prettier-config",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "main": "index.mjs",
   "files": [
     "index.mjs",
