@@ -4,7 +4,6 @@ import { baseConfig } from './base.mjs'
 
 const require = createRequire(import.meta.url)
 /**
- *
  * @param {import('./types').PrettierConfigOptions} options
  */
 export const factory = (options = {}) => {

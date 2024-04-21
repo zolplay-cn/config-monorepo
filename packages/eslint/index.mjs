@@ -7,6 +7,9 @@ import { configs as ReactQueryConfigs, rules as ReactQueryRules } from '@tanstac
 
 import tailwindPlugin from 'eslint-plugin-tailwindcss'
 
+/**
+ * @param {import('./types').PrettierConfigOptions} options
+ */
 export const zolplay = ({ tailwind, next, reactQuery } = {}) => {
   const base = antfu({
     stylistic: false,

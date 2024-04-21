@@ -36,5 +36,5 @@ export const baseConfig = {
     '.css$',
   ],
 
-  attributeGroups: ['^className$', '^(id|name|ref)$', '$DEFAULT', '^aria-', '^data-', '^on'],
+  attributeGroups: ['^className$', '^(key|id|name|ref)$', '$DEFAULT', '^aria-', '^data-', '^on'],
 }
