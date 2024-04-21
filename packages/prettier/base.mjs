@@ -1,42 +1,40 @@
-import { createRequire } from "node:module";
+import { createRequire } from 'node:module'
 
-const require = createRequire(import.meta.url);
+const require = createRequire(import.meta.url)
 
 export const baseConfig = {
   tabWidth: 2,
-  printWidth: 80,
+  printWidth: 120,
   semi: false,
   singleQuote: true,
-  trailingComma: "all",
-  arrowParens: "always",
-  endOfLine: "lf",
+  trailingComma: 'all',
+  arrowParens: 'always',
+  endOfLine: 'lf',
 
-  jsxSingleQuote: false,
+  jsxSingleQuote: true,
 
   useTabs: false,
 
-  plugins: [
-    require.resolve("prettier-package-json"),
-    require.resolve("prettier-plugin-autocorrect"),
-    require.resolve("prettier-plugin-sh"),
-  ],
+  plugins: [require.resolve('prettier-plugin-autocorrect'), require.resolve('prettier-plugin-sh')],
 
   importOrder: [
-    "react",
-    "<THIRD_PARTY_MODULES>",
-    "<TYPES>",
-    "<TYPES>^[.]",
-    "",
+    'react',
+    '<THIRD_PARTY_MODULES>',
+    '<TYPES>',
+    '<TYPES>^[.]',
+    '',
 
-    "^@(.*)/(.*)$",
-    "",
-    "^~/(.*)$",
-    "",
-    "^@/(.*)$",
-    "",
-    "^[./]",
-    "",
-    "^(?!.*[.]css$)[./].*$",
-    ".css$",
+    '^@(.*)/(.*)$',
+    '',
+    '^~/(.*)$',
+    '',
+    '^@/(.*)$',
+    '',
+    '^[./]',
+    '',
+    '^(?!.*[.]css$)[./].*$',
+    '.css$',
   ],
-};
+
+  attributeGroups: ['^className$', '^(id|name|ref)$', '$DEFAULT', '^aria-', '^data-', '^on'],
+}

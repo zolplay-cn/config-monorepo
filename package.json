@@ -4,14 +4,16 @@
   "private": true,
   "scripts": {
     "lint": "eslint .",
+    "inspect": "npx @eslint/config-inspector --config ./packages/eslint/index.mjs",
     "release": "bumpp --r && pnpm -r publish --access public"
   },
   "devDependencies": {
     "@zolplay/eslint-config": "workspace:*",
     "@zolplay/prettier-config": "workspace:*",
-    "bumpp": "^9.1.1",
-    "eslint": "^8.44.0",
-    "prettier": "^2.8.8",
-    "typescript": "^5.1.6"
-  }
+    "bumpp": "^9.4.0",
+    "eslint": "^9.1.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  },
+  "packageManager": "pnpm@9.0.4"
 }

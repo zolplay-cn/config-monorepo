@@ -6,10 +6,9 @@ const require = createRequire(import.meta.url)
 /**
  *
  * @param {import('./types').PrettierConfigOptions} options
- * @returns
  */
 export const factory = (options = {}) => {
-  const { importSort = true, tailwindcss = false } = options
+  const { importSort = true, attributesSort = true, tailwindcss = false } = options
 
   const plugins = [...baseConfig.plugins]
 
@@ -19,6 +18,10 @@ export const factory = (options = {}) => {
 
   if (tailwindcss) {
     plugins.push(require.resolve('prettier-plugin-tailwindcss'))
+  }
+
+  if (attributesSort) {
+    plugins.push(require.resolve('prettier-plugin-sort-attributes'))
   }
 
   return {
