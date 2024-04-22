@@ -1,11 +1,22 @@
 {
   "name": "@zolplay/prettier-config",
   "version": "1.0.14",
-  "main": "index.mjs",
+  "type": "module",
   "files": [
-    "index.mjs",
-    "base.mjs"
+    "dist"
   ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev":"tsup --watch"
+  },
   "dependencies": {
     "@ianvs/prettier-plugin-sort-imports": "4.2.1",
     "prettier": "^3.2.5",

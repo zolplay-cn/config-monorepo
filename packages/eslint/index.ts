@@ -1,33 +1,31 @@
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
-import svgJsxPlugin from 'eslint-plugin-svg-jsx'
+import type { EslintConfigOptions } from './types'
 
 import antfu from '@antfu/eslint-config'
+import { FlatCompat } from '@eslint/eslintrc'
+// @ts-expect-error no types
 import nextPlugin from '@next/eslint-plugin-next'
 import { configs as ReactQueryConfigs, rules as ReactQueryRules } from '@tanstack/eslint-plugin-query'
 
+// @ts-expect-error no types
 import tailwindPlugin from 'eslint-plugin-tailwindcss'
 
-/**
- * @param {import('./types').PrettierConfigOptions} options
- */
-export const zolplay = ({ tailwind, next, reactQuery } = {}) => {
+export const zolplay = ({ tailwind, next, reactQuery }: EslintConfigOptions = {}) => {
   const base = antfu({
     stylistic: false,
     react: true,
-  })
-    .removeRules('import/order')
-    .append(eslintPluginPrettierRecommended)
-    .append([
-      {
-        name: 'eslint-plugin-svg-jsx',
-        plugins: { 'eslint-plugin-svg-jsx': svgJsxPlugin },
-        rules: {
-          'svg-jsx/camel-case-dash': 'error',
-          'svg-jsx/camel-case-colon': 'error',
-          'svg-jsx/no-style-string': 'error',
-        },
-      },
-    ])
+  }).removeRules('import/order')
+  // .append(eslintPluginPrettierRecommended)
+  // .append(
+  //   compat.config({
+  //     plugins: ['svg-jsx'],
+  //     rules: {
+  //       'svg-jsx/camel-case-dash': 'error',
+  //       'svg-jsx/camel-case-colon': 'error',
+  //       'svg-jsx/no-style-string': 'error',
+  //     },
+  //   }),
+  // )
 
   !!tailwind &&
     base.append([
@@ -52,6 +50,8 @@ export const zolplay = ({ tailwind, next, reactQuery } = {}) => {
           ...nextPlugin.configs.recommended.rules,
           ...nextPlugin.configs['core-web-vitals'].rules,
           '@next/next/no-img-element': 'error',
+          '@next/next/no-duplicate-head': 'off',
+          '@next/next/no-page-custom-font': 'off',
         },
       },
     ])

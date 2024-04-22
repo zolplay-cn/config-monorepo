@@ -1,12 +1,8 @@
-import { createRequire } from 'node:module'
+import type { PrettierConfigOptions } from './types'
 
-import { baseConfig } from './base.mjs'
+import { baseConfig } from './base'
 
-const require = createRequire(import.meta.url)
-/**
- * @param {import('./types').PrettierConfigOptions} options
- */
-export const factory = (options = {}) => {
+export const factory = (options: PrettierConfigOptions = {}) => {
   const { importSort = true, attributesSort = true, tailwindcss = false } = options
 
   const plugins = [...baseConfig.plugins]
@@ -20,7 +16,7 @@ export const factory = (options = {}) => {
   }
 
   if (attributesSort) {
-    plugins.push(require.resolve('prettier-plugin-sort-attributes'))
+    plugins.push(require.resolve('prettier-plugin-organize-attributes'))
   }
 
   return {

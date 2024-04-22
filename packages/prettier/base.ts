@@ -1,7 +1,4 @@
-import { createRequire } from 'node:module'
-
-const require = createRequire(import.meta.url)
-
+/* eslint-disable ts/no-require-imports */
 export const baseConfig = {
   tabWidth: 2,
   printWidth: 120,
@@ -15,7 +12,7 @@ export const baseConfig = {
 
   useTabs: false,
 
-  plugins: [require.resolve('prettier-plugin-autocorrect'), require.resolve('prettier-plugin-sh')],
+  plugins: [require('prettier-plugin-autocorrect'), require('prettier-plugin-sh')],
 
   importOrder: [
     'react',
