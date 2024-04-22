@@ -15,7 +15,7 @@ export const zolplay = ({ tailwind, next, reactQuery }: EslintConfigOptions = {}
     stylistic: false,
     react: true,
   }).removeRules('import/order')
-  // .append(eslintPluginPrettierRecommended)
+  .append(eslintPluginPrettierRecommended)
   // .append(
   //   compat.config({
   //     plugins: ['svg-jsx'],
