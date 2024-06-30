@@ -1,3 +1,3 @@
-import { factory } from '@zolplay/prettier-config'
+import config from '@zolplay/prettier-config'
 
-export default factory({ tailwindcss: false })
+export default config

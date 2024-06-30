@@ -1,28 +1,31 @@
 {
   "name": "@zolplay/prettier-config",
-  "version": "1.0.14",
   "type": "module",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "version": "1.0.14",
   "exports": {
     ".": {
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     }
   },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
-    "dev":"tsup --watch"
+    "dev": "tsup --watch"
   },
   "dependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "4.2.1",
-    "prettier": "^3.2.5",
+    "@ianvs/prettier-plugin-sort-imports": "4.3.0",
+    "prettier": "^3.3.2",
     "prettier-plugin-autocorrect": "0.4.1",
     "prettier-plugin-organize-attributes": "^1.0.0",
     "prettier-plugin-sh": "0.14.0",
     "prettier-plugin-tailwindcss": "^0.5.14"
+  },
+  "devDependencies": {
+    "tsup": "^8.1.0"
   }
 }

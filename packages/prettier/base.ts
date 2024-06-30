@@ -1,4 +1,6 @@
-/* eslint-disable ts/no-require-imports */
+import pluginAutoCorrect from 'prettier-plugin-autocorrect'
+import pluginSh from 'prettier-plugin-sh'
+
 export const baseConfig = {
   tabWidth: 2,
   printWidth: 120,
@@ -7,12 +9,10 @@ export const baseConfig = {
   trailingComma: 'all',
   arrowParens: 'always',
   endOfLine: 'lf',
-
   jsxSingleQuote: true,
-
   useTabs: false,
 
-  plugins: [require('prettier-plugin-autocorrect'), require('prettier-plugin-sh')],
+  plugins: [pluginAutoCorrect, pluginSh],
 
   importOrder: [
     'react',

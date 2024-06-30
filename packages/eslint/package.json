@@ -1,37 +1,41 @@
 {
   "name": "@zolplay/eslint-config",
-  "version": "1.0.0",
   "type": "module",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "version": "1.0.0",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     }
   },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch"
   },
+  "peerDependencies": {
+    "@eslint-react/eslint-plugin": "^1.5.18",
+    "eslint-plugin-react-hooks": "5.1.0-rc-58af67a8f8-20240628",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "eslint-plugin-svg-jsx": "^1.2.4"
+  },
   "dependencies": {
-    "@antfu/eslint-config": "^2.15.0",
-    "@eslint-react/eslint-plugin": "^1.5.9",
-    "@eslint/eslintrc": "^3.0.2",
-    "@next/eslint-plugin-next": "^14.2.2",
-    "@tanstack/eslint-plugin-query": "^5.28.11",
-    "eslint-config-next": "^14.2.2",
+    "@antfu/eslint-config": "^2.21.2",
+    "@eslint/eslintrc": "^3.1.0",
+    "@next/eslint-plugin-next": "^14.2.4",
+    "@tanstack/eslint-plugin-query": "^5.47.0",
+    "eslint-config-next": "^14.2.4",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.6",
-    "eslint-plugin-svg-jsx": "^1.2.4",
-    "eslint-plugin-tailwindcss": "^3.15.1"
+    "eslint-plugin-tailwindcss": "^3.17.4"
   },
   "devDependencies": {
-    "@types/eslint__eslintrc": "^2.1.1"
+    "@types/eslint__eslintrc": "^2.1.1",
+    "tsup": "^8.1.0"
   }
 }

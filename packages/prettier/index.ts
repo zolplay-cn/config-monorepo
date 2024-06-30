@@ -1,22 +1,21 @@
-import type { PrettierConfigOptions } from './types'
+import pluginOrganizeAttributes from 'prettier-plugin-organize-attributes'
+import type { ConfigOption } from './types'
+
+import pluginSortImports from '@ianvs/prettier-plugin-sort-imports'
 
 import { baseConfig } from './base'
 
-export const factory = (options: PrettierConfigOptions = {}) => {
-  const { importSort = true, attributesSort = true, tailwindcss = false } = options
+export const factory = (options: ConfigOption = {}) => {
+  const { importSort = true, attributesSort = true } = options
 
   const plugins = [...baseConfig.plugins]
 
   if (importSort) {
-    plugins.push(require.resolve('@ianvs/prettier-plugin-sort-imports'))
-  }
-
-  if (tailwindcss) {
-    plugins.push(require.resolve('prettier-plugin-tailwindcss'))
+    plugins.push(pluginSortImports)
   }
 
   if (attributesSort) {
-    plugins.push(require.resolve('prettier-plugin-organize-attributes'))
+    plugins.push(pluginOrganizeAttributes)
   }
 
   return {
@@ -25,6 +24,6 @@ export const factory = (options: PrettierConfigOptions = {}) => {
   }
 }
 export default factory({
-  tailwindcss: true,
   importSort: true,
+  attributesSort: true,
 })

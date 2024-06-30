@@ -1,3 +1,5 @@
+// @ts-expect-error no types
+import eslintConfigPrettier from 'eslint-config-prettier'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import type { EslintConfigOptions } from './types'
 
@@ -10,36 +12,28 @@ import { configs as ReactQueryConfigs, rules as ReactQueryRules } from '@tanstac
 // @ts-expect-error no types
 import tailwindPlugin from 'eslint-plugin-tailwindcss'
 
-export const zolplay = ({ tailwind, next, reactQuery }: EslintConfigOptions = {}) => {
+const compat = new FlatCompat()
+
+export const zolplay = ({ prettier, tailwind, next, reactQuery }: EslintConfigOptions = {}) => {
   const base = antfu({
     stylistic: false,
     react: true,
   }).removeRules('import/order')
-  .append(eslintPluginPrettierRecommended)
-  // .append(
-  //   compat.config({
-  //     plugins: ['svg-jsx'],
-  //     rules: {
-  //       'svg-jsx/camel-case-dash': 'error',
-  //       'svg-jsx/camel-case-colon': 'error',
-  //       'svg-jsx/no-style-string': 'error',
-  //     },
-  //   }),
-  // )
 
-  !!tailwind &&
-    base.append([
-      {
-        name: 'taliwindcss',
-        plugins: { tailwindcss: tailwindPlugin },
-        rules: {
-          ...tailwindPlugin.configs.recommended.rules,
-          'tailwindcss/classnames-order': 'off',
-          'tailwindcss/migration-from-tailwind-2': 'off',
-        },
-        settings: {},
+  base.append([
+    ...compat.config({
+      plugins: ['svg-jsx'],
+      rules: {
+        'svg-jsx/camel-case-dash': 'error',
+        'svg-jsx/camel-case-colon': 'error',
+        'svg-jsx/no-style-string': 'error',
       },
-    ])
+    }),
+  ])
+
+  !!prettier && base.append([eslintPluginPrettierRecommended, eslintConfigPrettier])
+
+  !!tailwind && base.append(tailwindPlugin.configs['flat/recommended'])
 
   !!next &&
     base.append([
@@ -74,5 +68,5 @@ export const zolplay = ({ tailwind, next, reactQuery }: EslintConfigOptions = {}
   return base
 }
 
-const defaultConfig = zolplay({ tailwind: true, next: true, reactQuery: true })
+const defaultConfig = zolplay({ prettier: true, tailwind: true, next: true, reactQuery: true })
 export default defaultConfig

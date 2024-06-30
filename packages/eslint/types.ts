@@ -1,5 +1,6 @@
 export interface EslintConfigOptions {
-  tailwind?: boolean // config
-  next?: boolean // config
-  reactQuery?: boolean // config
+  prettier?: boolean
+  tailwind?: boolean
+  next?: boolean
+  reactQuery?: boolean
 }
