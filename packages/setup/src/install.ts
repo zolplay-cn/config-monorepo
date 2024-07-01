@@ -6,9 +6,8 @@ import type { Config } from './types'
 export async function install(config: Config[]) {
   await Promise.allSettled(
     config.map(async (config) => {
-      config.dependencies && (await addDependency(config.dependencies, { cwd: cwd(), workspace: true, silent: true }))
-      config.devDependencies &&
-        (await addDependency(config.devDependencies, { cwd: cwd(), dev: true, workspace: true, silent: true }))
+      config.dependencies && (await addDependency(config.dependencies, { cwd: cwd(), silent: false }))
+      config.devDependencies && (await addDependency(config.devDependencies, { cwd: cwd(), dev: true, silent: false }))
 
       config.files &&
         (await Promise.allSettled(
