@@ -8,7 +8,8 @@ export const nextTsConfig = {
       path: 'next.config.mjs',
       content: `
 import { tsImport } from 'tsx/esm/api'
-    
+
+// tsImport('./env.ts', import.meta.url)
 const { default: module } = await tsImport('./next.config.ts', import.meta.url)
 
 export default module.default`,
