@@ -1,6 +1,6 @@
 {
   "name": "@zolplay/config-monorepo",
-  "version": "1.0.14",
+  "version": "2.0.0-beta.1",
   "private": true,
   "packageManager": "pnpm@9.4.0",
   "scripts": {
