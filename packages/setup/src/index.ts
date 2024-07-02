@@ -22,13 +22,13 @@ const selectedConfigs = (await multiselect({
     },
   ],
   required: false,
-})) as Config[]
+})) as Config[] | undefined
 
 const s = spinner()
 
 s.start(`Setting up your project`)
 
-await install(selectedConfigs)
+selectedConfigs && (await install(selectedConfigs))
 
 s.stop()
 
