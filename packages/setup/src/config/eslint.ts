@@ -14,16 +14,16 @@ export const eslintConfig = {
     {
       path: 'eslint.config.mjs',
       content: `
-    import config from '@zolplay/eslint-config'
+import config from '@zolplay/eslint-config'
 
-    export default config.append({
-      settings: {
-        tailwindcss: {
-          // path to your tailwind config
-          config: '',
-        },
-      },
-    })
+export default config.append({
+  settings: {
+    tailwindcss: {
+      // path to your tailwind config
+      config: '',
+    },
+  },
+})
     `,
     },
   ],

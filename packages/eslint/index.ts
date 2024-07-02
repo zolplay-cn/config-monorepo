@@ -33,7 +33,14 @@ export const zolplay = ({ prettier, tailwind, next, reactQuery }: EslintConfigOp
 
   !!prettier && base.append([eslintPluginPrettierRecommended, eslintConfigPrettier])
 
-  !!tailwind && base.append(tailwindPlugin.configs['flat/recommended'])
+  !!tailwind &&
+    base.append(tailwindPlugin.configs['flat/recommended'], {
+      settings: {
+        tailwindcss: {
+          callees: ['classnames', 'clsxm', 'cn', 'tv'],
+        },
+      },
+    })
 
   !!next &&
     base.append([

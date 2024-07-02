@@ -6,9 +6,10 @@ export const prettierConfig = {
   files: [
     {
       path: 'prettier.config.mjs',
-      content: `import config from '@zolplay/prettier-config'
+      content: `
+import config from '@zolplay/prettier-config'
 
-      export default config
+export default config
       `,
     },
   ],
