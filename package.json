@@ -1,6 +1,6 @@
 {
   "name": "@zolplay/config-monorepo",
-  "version": "2.0.0-beta.1",
+  "version": "2.0.0-beta.2",
   "private": true,
   "packageManager": "pnpm@9.4.0",
   "scripts": {
@@ -8,6 +8,7 @@
     "inspect": "npx @eslint/config-inspector --config ./packages/eslint/index.ts",
     "build": "pnpm --parallel run build",
     "dev": "pnpm --parallel run dev",
+    "prerelease": "pnpm run build",
     "release": "bumpp --r && pnpm -r publish --access public"
   },
   "devDependencies": {
