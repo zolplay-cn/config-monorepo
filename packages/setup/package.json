@@ -1,6 +1,7 @@
 {
   "name": "@zolplay/config-setup",
   "type": "module",
+  "version": "2.0.0-beta.1",
   "dependencies": {
     "@clack/prompts": "^0.7.0",
     "fs-extra": "^11.2.0",
@@ -8,6 +9,5 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4"
-  },
-  "version": "2.0.0-beta.1"
+  }
 }

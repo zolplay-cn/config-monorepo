@@ -7,7 +7,7 @@ import antfu from '@antfu/eslint-config'
 import { FlatCompat } from '@eslint/eslintrc'
 // @ts-expect-error no types
 import nextPlugin from '@next/eslint-plugin-next'
-import { configs as ReactQueryConfigs, rules as ReactQueryRules } from '@tanstack/eslint-plugin-query'
+import queryPlugin from '@tanstack/eslint-plugin-query'
 
 // @ts-expect-error no types
 import tailwindPlugin from 'eslint-plugin-tailwindcss'
@@ -57,20 +57,7 @@ export const zolplay = ({ prettier, tailwind, next, reactQuery }: EslintConfigOp
       },
     ])
 
-  !!reactQuery &&
-    base.append([
-      {
-        name: 'react-query',
-        plugins: {
-          '@tanstack/eslint-plugin-query': { rules: ReactQueryRules, configs: ReactQueryConfigs },
-        },
-        rules: {
-          '@tanstack/eslint-plugin-query/exhaustive-deps': 'error',
-          '@tanstack/eslint-plugin-query/no-rest-destructuring': 'warn',
-          '@tanstack/eslint-plugin-query/stable-query-client': 'error',
-        },
-      },
-    ])
+  !!reactQuery && base.append(queryPlugin.configs['flat/recommended'])
 
   return base
 }
