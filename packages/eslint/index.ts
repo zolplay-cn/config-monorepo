@@ -14,7 +14,7 @@ import tailwindPlugin from 'eslint-plugin-tailwindcss'
 
 const compat = new FlatCompat()
 
-export const zolplay = ({ prettier, tailwind, next, reactQuery }: EslintConfigOptions = {}) => {
+export const factory = ({ prettier, tailwind, next, reactQuery }: EslintConfigOptions = {}) => {
   const base = antfu({
     stylistic: false,
     react: true,
@@ -62,5 +62,8 @@ export const zolplay = ({ prettier, tailwind, next, reactQuery }: EslintConfigOp
   return base
 }
 
-const defaultConfig = zolplay({ prettier: true, tailwind: true, next: true, reactQuery: true })
+const defaultConfig = factory({ prettier: true, tailwind: true, next: true, reactQuery: true })
 export default defaultConfig
+
+// Fix `error TS2742: The inferred type of 'factory' cannot be named without a reference to '.pnpm/eslint-flat-config-utils@0.2.5/node_modules/eslint-flat-config-utils'. This is likely not portable. A type annotation is necessary.`
+export * from 'eslint-flat-config-utils'

@@ -4,8 +4,8 @@
   "version": "2.0.0-beta.2",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     }
   },
   "main": "./dist/index.js",
@@ -20,9 +20,9 @@
   "dependencies": {
     "@ianvs/prettier-plugin-sort-imports": "4.3.0",
     "prettier": "^3.3.2",
-    "prettier-plugin-autocorrect": "0.4.1",
+    "prettier-plugin-autocorrect": "^0.4.1",
     "prettier-plugin-organize-attributes": "^1.0.0",
-    "prettier-plugin-sh": "0.14.0",
+    "prettier-plugin-sh": "^0.14.0",
     "prettier-plugin-tailwindcss": "^0.5.14"
   },
   "devDependencies": {
