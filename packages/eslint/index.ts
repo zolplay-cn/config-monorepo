@@ -18,7 +18,7 @@ export const factory = ({ prettier, tailwind, next, reactQuery }: EslintConfigOp
   const base = antfu({
     stylistic: false,
     react: true,
-  }).removeRules('import/order')
+  }).overrideRules({ 'import/order': 'off' })
 
   base.append([
     ...compat.config({
