@@ -91,7 +91,6 @@ export const factory = ({ next, prettier, reactQuery, tailwind }: EslintConfigOp
           type: 'natural',
         },
       ],
-      'perfectionist/sort-intersection-types': ['error', { type: 'natural' }],
       'perfectionist/sort-jsx-props': [
         'error',
         {
@@ -103,6 +102,7 @@ export const factory = ({ next, prettier, reactQuery, tailwind }: EslintConfigOp
       'perfectionist/sort-named-exports': ['error', { 'group-kind': 'types-first', type: 'natural' }],
       'perfectionist/sort-object-types': ['error', { 'custom-groups': customGroups, groups, type: 'natural' }],
       'perfectionist/sort-objects': ['error', { 'custom-groups': customGroups, groups, type: 'natural' }],
+      'perfectionist/sort-union-types': ['error', { 'nullable-last': true, type: 'natural' }],
     },
   })
 
