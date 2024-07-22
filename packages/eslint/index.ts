@@ -7,6 +7,8 @@ import antfu from '@antfu/eslint-config'
 import { FlatCompat } from '@eslint/eslintrc'
 // @ts-expect-error no types
 import nextPlugin from '@next/eslint-plugin-next'
+import stylistic from '@stylistic/eslint-plugin'
+import stylisticJsx from '@stylistic/eslint-plugin-jsx'
 import queryPlugin from '@tanstack/eslint-plugin-query'
 
 // @ts-expect-error no types
@@ -41,19 +43,42 @@ export const factory = ({ next, prettier, reactQuery, tailwind }: EslintConfigOp
     }),
   ])
 
+  const customGroups = {
+    callback: 'on*',
+    data: '{data-*,aria-*}',
+    links: '{link,href,to,src,url}',
+    preserve: '{key,ref,id,className,*ClassName,children}',
+  }
+
+  const groups = ['preserve', 'links', 'data', 'shorthand', 'unknown', 'multiline', 'callback']
+
   // perfectionist
   base.append({
     rules: {
-      'perfectionist/sort-array-includes': 'error',
-      'perfectionist/sort-enums': 'error',
-      'perfectionist/sort-exports': 'error',
-      'perfectionist/sort-interfaces': 'error',
-      'perfectionist/sort-intersection-types': 'error',
-      'perfectionist/sort-jsx-props': 'error',
-      'perfectionist/sort-named-exports': 'error',
-      'perfectionist/sort-object-types': 'error',
-      'perfectionist/sort-objects': 'error',
-      'perfectionist/sort-union-types': 'error',
+      'perfectionist/sort-array-includes': ['error', { type: 'natural' }],
+      'perfectionist/sort-enums': ['error', { type: 'natural' }],
+      'perfectionist/sort-exports': ['error', { type: 'natural' }],
+      'perfectionist/sort-interfaces': [
+        'error',
+        {
+          'custom-groups': customGroups,
+          groups,
+          'optionality-order': 'required-first',
+          type: 'natural',
+        },
+      ],
+      'perfectionist/sort-intersection-types': ['error', { type: 'natural' }],
+      'perfectionist/sort-jsx-props': [
+        'error',
+        {
+          'custom-groups': customGroups,
+          groups,
+        },
+      ],
+      'perfectionist/sort-named-exports': ['error', { 'group-kind': 'types-first', type: 'natural' }],
+      'perfectionist/sort-object-types': ['error', { 'custom-groups': customGroups, groups, type: 'natural' }],
+      'perfectionist/sort-objects': ['error', { 'custom-groups': customGroups, groups, type: 'natural' }],
+      'perfectionist/sort-union-types': ['error', { 'nullable-last': true, type: 'natural' }],
     },
   })
 
