@@ -44,13 +44,37 @@ export const factory = ({ next, prettier, reactQuery, tailwind }: EslintConfigOp
   ])
 
   const customGroups = {
-    callback: 'on*',
-    data: '{data-*,aria-*}',
-    links: '{link,href,to,src,url}',
-    preserve: '{key,ref,id,className,*ClassName,children}',
+    as: ['as'],
+    children: ['children'],
+    className: ['class', 'className', '*className', 'style'],
+    'framer-motion': ['initial', 'animate', 'exit', 'whileHover', 'whileTap', 'transition'],
+    icon: ['icon'],
+    jsx: ['key', 'ref', 'id'],
+    label: ['label', 'name'],
+    links: ['link', 'href', 'to', 'src', 'url'],
+    meta: ['name', 'property', 'content'],
+    svg: ['d', 'width', 'height', 'viewBox', 'fill', 'stroke'],
+    value: ['value'],
+    variant: ['variant', 'type', 'mode'],
   }
 
-  const groups = ['preserve', 'links', 'data', 'shorthand', 'unknown', 'multiline', 'callback']
+  const groups = [
+    'as',
+    'jsx',
+    'children',
+    'links',
+    'variant',
+    'className',
+    'label',
+    'shorthand',
+    'icon',
+    'value',
+    'svg',
+    'framer-motion',
+    'unknown',
+    'multiline',
+    'callback',
+  ]
 
   // perfectionist
   base.append({
@@ -73,6 +97,7 @@ export const factory = ({ next, prettier, reactQuery, tailwind }: EslintConfigOp
         {
           'custom-groups': customGroups,
           groups,
+          type: 'natural',
         },
       ],
       'perfectionist/sort-named-exports': ['error', { 'group-kind': 'types-first', type: 'natural' }],
