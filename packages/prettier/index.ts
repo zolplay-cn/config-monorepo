@@ -6,7 +6,7 @@ import pluginSortImports from '@ianvs/prettier-plugin-sort-imports'
 import { baseConfig } from './base'
 
 export const factory = (options: ConfigOption = {}) => {
-  const { importSort = true, attributesSort = true } = options
+  const { attributesSort = true, importSort = true } = options
 
   const plugins = [...baseConfig.plugins]
 
@@ -24,6 +24,6 @@ export const factory = (options: ConfigOption = {}) => {
   }
 }
 export default factory({
-  importSort: true,
   attributesSort: true,
+  importSort: true,
 })

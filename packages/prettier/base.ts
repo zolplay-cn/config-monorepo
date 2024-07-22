@@ -2,18 +2,9 @@ import pluginAutoCorrect from 'prettier-plugin-autocorrect'
 import pluginSh from 'prettier-plugin-sh'
 
 export const baseConfig = {
-  tabWidth: 2,
-  printWidth: 120,
-  semi: false,
-  singleQuote: true,
-  trailingComma: 'all',
   arrowParens: 'always',
+  attributeGroups: ['^className$', '^(key|id|name|ref)$', '$DEFAULT', '^aria-', '^data-', '^on'],
   endOfLine: 'lf',
-  jsxSingleQuote: true,
-  useTabs: false,
-
-  plugins: [pluginAutoCorrect, pluginSh],
-
   importOrder: [
     'react',
     '<THIRD_PARTY_MODULES>',
@@ -32,6 +23,15 @@ export const baseConfig = {
     '^(?!.*[.]css$)[./].*$',
     '.css$',
   ],
+  jsxSingleQuote: true,
+  plugins: [pluginAutoCorrect, pluginSh],
+  printWidth: 120,
+  semi: false,
+  singleQuote: true,
 
-  attributeGroups: ['^className$', '^(key|id|name|ref)$', '$DEFAULT', '^aria-', '^data-', '^on'],
+  tabWidth: 2,
+
+  trailingComma: 'all',
+
+  useTabs: false,
 }
