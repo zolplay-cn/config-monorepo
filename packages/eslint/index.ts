@@ -3,7 +3,7 @@ import eslintConfigPrettier from 'eslint-config-prettier'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import type { EslintConfigOptions } from './types'
 
-import antfu from '@antfu/eslint-config'
+import antfu, { perfectionist } from '@antfu/eslint-config'
 import { FlatCompat } from '@eslint/eslintrc'
 // @ts-expect-error no types
 import nextPlugin from '@next/eslint-plugin-next'
@@ -18,7 +18,10 @@ export const factory = ({ prettier, tailwind, next, reactQuery }: EslintConfigOp
   const base = antfu({
     stylistic: false,
     react: true,
-  }).overrideRules({ 'import/order': 'off' })
+    plugins: {
+      perfectionist,
+    },
+  }).overrideRules({ 'import/order': 'off', 'ts/no-unused-expressions': 'off' })
 
   base.append([
     ...compat.config({
