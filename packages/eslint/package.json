@@ -24,7 +24,7 @@
     "eslint-plugin-svg-jsx": "^1.2.4"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^2.23.1",
+    "@antfu/eslint-config": "^2.23.2",
     "@eslint/eslintrc": "^3.1.0",
     "@next/eslint-plugin-next": "^14.2.5",
     "@tanstack/eslint-plugin-query": "^5.51.12",
@@ -34,7 +34,7 @@
     "eslint-plugin-tailwindcss": "^3.17.4"
   },
   "devDependencies": {
-    "@types/eslint__eslintrc": "^2.1.1",
-    "tsup": "^8.2.1"
+    "@types/eslint__eslintrc": "^2.1.2",
+    "tsup": "^8.2.2"
   }
 }

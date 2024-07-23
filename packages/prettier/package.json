@@ -26,6 +26,6 @@
     "prettier-plugin-tailwindcss": "^0.5.14"
   },
   "devDependencies": {
-    "tsup": "^8.2.1"
+    "tsup": "^8.2.2"
   }
 }

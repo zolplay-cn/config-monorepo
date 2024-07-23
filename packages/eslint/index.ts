@@ -7,8 +7,6 @@ import antfu from '@antfu/eslint-config'
 import { FlatCompat } from '@eslint/eslintrc'
 // @ts-expect-error no types
 import nextPlugin from '@next/eslint-plugin-next'
-import stylistic from '@stylistic/eslint-plugin'
-import stylisticJsx from '@stylistic/eslint-plugin-jsx'
 import queryPlugin from '@tanstack/eslint-plugin-query'
 
 // @ts-expect-error no types
@@ -46,16 +44,16 @@ export const factory = ({ next, prettier, reactQuery, tailwind }: EslintConfigOp
   const customGroups = {
     as: ['as'],
     children: ['children'],
+    variant: ['variant', 'type', 'mode'],
     className: ['class', 'className', '*className', 'style'],
-    'framer-motion': ['initial', 'animate', 'exit', 'whileHover', 'whileTap', 'transition'],
-    icon: ['icon'],
-    jsx: ['key', 'ref', 'id'],
     label: ['label', 'name'],
+    icon: ['icon'],
+    value: ['value'],
+    'framer-motion': ['initial', 'animate', 'exit', 'whileHover', 'whileTap', 'transition'],
+    jsx: ['key', 'ref', 'id'],
     links: ['link', 'href', 'to', 'src', 'url'],
     meta: ['name', 'property', 'content'],
     svg: ['d', 'width', 'height', 'viewBox', 'fill', 'stroke'],
-    value: ['value'],
-    variant: ['variant', 'type', 'mode'],
   }
 
   const groups = [
@@ -80,29 +78,47 @@ export const factory = ({ next, prettier, reactQuery, tailwind }: EslintConfigOp
   base.append({
     rules: {
       'perfectionist/sort-array-includes': ['error', { type: 'natural' }],
-      'perfectionist/sort-enums': ['error', { type: 'natural' }],
+      'perfectionist/sort-enums': ['error', { type: 'natural', 'partition-by-comment': true }],
       'perfectionist/sort-exports': ['error', { type: 'natural' }],
       'perfectionist/sort-interfaces': [
         'error',
         {
+          type: 'natural',
           'custom-groups': customGroups,
           groups,
           'optionality-order': 'required-first',
-          type: 'natural',
+          'partition-by-new-line': true,
         },
       ],
       'perfectionist/sort-jsx-props': [
         'error',
         {
+          type: 'natural',
           'custom-groups': customGroups,
           groups,
-          type: 'natural',
         },
       ],
-      'perfectionist/sort-named-exports': ['error', { 'group-kind': 'types-first', type: 'natural' }],
-      'perfectionist/sort-object-types': ['error', { 'custom-groups': customGroups, groups, type: 'natural' }],
-      'perfectionist/sort-objects': ['error', { 'custom-groups': customGroups, groups, type: 'natural' }],
-      'perfectionist/sort-union-types': ['error', { 'nullable-last': true, type: 'natural' }],
+      'perfectionist/sort-named-exports': ['error', { type: 'natural', 'group-kind': 'types-first' }],
+      'perfectionist/sort-object-types': [
+        'error',
+        {
+          type: 'natural',
+          'custom-groups': customGroups,
+          groups,
+          'partition-by-new-line': true,
+        },
+      ],
+      'perfectionist/sort-objects': [
+        'error',
+        {
+          type: 'natural',
+          'custom-groups': customGroups,
+          groups,
+          'partition-by-comment': true,
+          'partition-by-new-line': true,
+        },
+      ],
+      'perfectionist/sort-union-types': ['error', { type: 'natural', 'nullable-last': true }],
     },
   })
 
