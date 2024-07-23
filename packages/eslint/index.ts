@@ -49,7 +49,9 @@ export const factory = ({ next, prettier, reactQuery, tailwind }: EslintConfigOp
     label: ['label', 'name'],
     icon: ['icon'],
     value: ['value'],
+    callback: ['on*', 'handle*'],
     'framer-motion': ['initial', 'animate', 'exit', 'whileHover', 'whileTap', 'transition'],
+    is: ['is*'],
     jsx: ['key', 'ref', 'id'],
     links: ['link', 'href', 'to', 'src', 'url'],
     meta: ['name', 'property', 'content'],
@@ -57,6 +59,7 @@ export const factory = ({ next, prettier, reactQuery, tailwind }: EslintConfigOp
   }
 
   const groups = [
+    'meta',
     'as',
     'jsx',
     'children',
@@ -68,6 +71,7 @@ export const factory = ({ next, prettier, reactQuery, tailwind }: EslintConfigOp
     'icon',
     'value',
     'svg',
+    'is',
     'framer-motion',
     'unknown',
     'multiline',
