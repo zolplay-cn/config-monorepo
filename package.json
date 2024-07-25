@@ -12,7 +12,7 @@
     "release": "bumpp --r && pnpm -r publish --access public"
   },
   "devDependencies": {
-    "@types/node": "^20.14.11",
+    "@types/node": "^20.14.12",
     "@zolplay/eslint-config": "workspace:*",
     "@zolplay/prettier-config": "workspace:*",
     "bumpp": "^9.4.1",

@@ -35,6 +35,6 @@
   },
   "devDependencies": {
     "@types/eslint__eslintrc": "^2.1.2",
-    "tsup": "^8.2.2"
+    "tsup": "^8.2.3"
   }
 }
