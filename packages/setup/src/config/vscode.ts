@@ -6,6 +6,7 @@ export const VSCodeConfig = {
   files: [
     {
       path: './.vscode/settings.json',
+
       content: `
 {
   "prettier.enable": true,

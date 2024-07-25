@@ -2,7 +2,7 @@ import type { Config } from './types'
 
 import { multiselect, outro, spinner } from '@clack/prompts'
 
-import { eslintConfig, lintStagedConfig, prettierConfig } from './config'
+import { eslintConfig, lintStagedConfig, prettierConfig, T3EnvConfig, TSConfig, VSCodeConfig } from './config'
 import { install } from './install'
 
 const selectedConfigs = (await multiselect({
@@ -19,6 +19,18 @@ const selectedConfigs = (await multiselect({
     {
       label: lintStagedConfig.name,
       value: lintStagedConfig,
+    },
+    {
+      label: VSCodeConfig.name,
+      value: VSCodeConfig,
+    },
+    {
+      label: TSConfig.name,
+      value: TSConfig,
+    },
+    {
+      label: T3EnvConfig.name,
+      value: T3EnvConfig,
     },
   ],
   required: false,

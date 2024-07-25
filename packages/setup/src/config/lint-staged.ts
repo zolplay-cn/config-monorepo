@@ -7,6 +7,7 @@ export const lintStagedConfig = {
   files: [
     {
       path: 'simple-git-hooks.json',
+
       content: `
 {
     "pre-commit": "npx lint-staged",
@@ -15,11 +16,12 @@ export const lintStagedConfig = {
     },
     {
       path: 'lint-staged.config.mjs',
+
       content: `
-{
-    "*": "eslint --fix"
+      export default {
+  '*': 'eslint --fix',
 }
-                  `,
+`,
     },
   ],
 } satisfies Config

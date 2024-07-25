@@ -5,6 +5,7 @@ export const TSConfig = {
   files: [
     {
       path: './tsconfig.json',
+
       content: `
 {
   "compilerOptions": {

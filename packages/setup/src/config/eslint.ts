@@ -13,6 +13,7 @@ export const eslintConfig = {
   files: [
     {
       path: 'eslint.config.mjs',
+
       content: `
 import config from '@zolplay/eslint-config'
 

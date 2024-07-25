@@ -6,6 +6,7 @@ export const T3EnvConfig = {
   files: [
     {
       path: './env.ts',
+
       content: `
 import { createEnv } from "@t3-oss/env-nextjs";
 import { z } from "zod";
