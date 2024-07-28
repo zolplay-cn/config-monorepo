@@ -31,14 +31,14 @@ export const factory = ({ next, prettier, reactQuery, tailwind }: EslintConfigOp
   })
 
   base.append([
-    ...compat.config({
+    ...(compat.config({
       plugins: ['svg-jsx'],
       rules: {
         'svg-jsx/camel-case-colon': 'error',
         'svg-jsx/camel-case-dash': 'error',
         'svg-jsx/no-style-string': 'error',
       },
-    }),
+    }) as any),
   ])
 
   const customGroups = {
@@ -82,47 +82,47 @@ export const factory = ({ next, prettier, reactQuery, tailwind }: EslintConfigOp
   base.append({
     rules: {
       'perfectionist/sort-array-includes': ['error', { type: 'natural' }],
-      'perfectionist/sort-enums': ['error', { type: 'natural', 'partition-by-comment': 'partitionByComment' }],
+      'perfectionist/sort-enums': ['error', { type: 'natural', partitionByComment: true }],
       'perfectionist/sort-exports': ['error', { type: 'natural' }],
       'perfectionist/sort-interfaces': [
         'error',
         {
           type: 'natural',
-          'custom-groups': customGroups,
+          customGroups,
+          groupKind: 'required-first',
           groups,
-          'optionality-order': 'required-first',
-          'partition-by-new-line': true,
+          partitionByNewLine: true,
         },
       ],
       'perfectionist/sort-jsx-props': [
         'error',
         {
           type: 'natural',
-          'custom-groups': customGroups,
+          customGroups,
           groups,
         },
       ],
-      'perfectionist/sort-named-exports': ['error', { type: 'natural', 'group-kind': 'types-first' }],
+      'perfectionist/sort-named-exports': ['error', { type: 'natural', groupKind: 'types-first' }],
       'perfectionist/sort-object-types': [
         'error',
         {
           type: 'natural',
-          'custom-groups': customGroups,
+          customGroups,
           groups,
-          'partition-by-new-line': true,
+          partitionByNewLine: true,
         },
       ],
       'perfectionist/sort-objects': [
         'error',
         {
           type: 'natural',
-          'custom-groups': customGroups,
+          customGroups,
           groups,
-          'partition-by-comment': true,
-          'partition-by-new-line': true,
+          partitionByComment: true,
+          partitionByNewLine: true,
         },
       ],
-      'perfectionist/sort-union-types': ['error', { type: 'natural', 'nullable-last': true }],
+      'perfectionist/sort-union-types': ['error', { type: 'natural' }],
     },
   })
 
@@ -152,7 +152,7 @@ export const factory = ({ next, prettier, reactQuery, tailwind }: EslintConfigOp
       },
     ])
 
-  !!reactQuery && base.append(queryPlugin.configs['flat/recommended'])
+  !!reactQuery && base.append(queryPlugin.configs['flat/recommended'] as any)
 
   return base
 }

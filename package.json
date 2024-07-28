@@ -16,7 +16,7 @@
     "@zolplay/eslint-config": "workspace:*",
     "@zolplay/prettier-config": "workspace:*",
     "bumpp": "^9.4.1",
-    "eslint": "^9.7.0",
+    "eslint": "^9.8.0",
     "prettier": "^3.3.3",
     "typescript": "^5.5.4"
   }
