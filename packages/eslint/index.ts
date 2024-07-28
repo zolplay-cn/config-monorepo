@@ -49,9 +49,9 @@ export const factory = ({ next, prettier, reactQuery, tailwind }: EslintConfigOp
     label: ['label', 'name'],
     icon: ['icon'],
     value: ['value'],
+    is: ['is*'],
     callback: ['on*', 'handle*'],
     'framer-motion': ['initial', 'animate', 'exit', 'whileHover', 'whileTap', 'transition'],
-    is: ['is*'],
     jsx: ['key', 'ref', 'id'],
     links: ['link', 'href', 'to', 'src', 'url'],
     meta: ['name', 'property', 'content'],
@@ -82,7 +82,7 @@ export const factory = ({ next, prettier, reactQuery, tailwind }: EslintConfigOp
   base.append({
     rules: {
       'perfectionist/sort-array-includes': ['error', { type: 'natural' }],
-      'perfectionist/sort-enums': ['error', { type: 'natural', 'partition-by-comment': true }],
+      'perfectionist/sort-enums': ['error', { type: 'natural', 'partition-by-comment': 'partitionByComment' }],
       'perfectionist/sort-exports': ['error', { type: 'natural' }],
       'perfectionist/sort-interfaces': [
         'error',
