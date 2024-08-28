@@ -1,4 +1,3 @@
 #!/usr/bin/env node
-import setup from '../dist/index.js'
 
-setup()
+import '../dist/index.js'
