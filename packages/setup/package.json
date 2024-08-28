@@ -2,12 +2,23 @@
   "name": "@zolplay/config-setup",
   "type": "module",
   "version": "2.0.0-beta.12",
+  "bin": {
+    "setup": "./bin/setup.mjs"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
   "dependencies": {
     "@clack/prompts": "^0.7.0",
     "fs-extra": "^11.2.0",
     "nypm": "^0.3.11"
   },
   "devDependencies": {
-    "@types/fs-extra": "^11.0.4"
+    "@types/fs-extra": "^11.0.4",
+    "tsup": "^8.2.3"
   }
 }
