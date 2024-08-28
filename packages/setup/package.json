@@ -5,7 +5,7 @@
   "dependencies": {
     "@clack/prompts": "^0.7.0",
     "fs-extra": "^11.2.0",
-    "nypm": "^0.3.9"
+    "nypm": "^0.3.11"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4"

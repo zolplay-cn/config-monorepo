@@ -5,12 +5,19 @@ import { addDependency } from 'nypm'
 import type { Config } from './types'
 
 export async function install(config: Config[]) {
+  const depsToInstall = {
+    dependencies: config.flatMap((config) => config.dependencies || []),
+    devDependencies: config.flatMap((config) => config.devDependencies || []),
+  }
+
+  await Promise.allSettled(
+    Object.entries(depsToInstall).map(([type, dependencies]) => {
+      return addDependency(dependencies, { cwd: cwd(), dev: type === 'devDependencies', silent: true })
+    }),
+  )
+
   await Promise.allSettled(
     config.map(async (config) => {
-      config.dependencies && (await addDependency(config.dependencies, { cwd: cwd(), silent: true, workspace: true }))
-      config.devDependencies &&
-        (await addDependency(config.devDependencies, { cwd: cwd(), dev: true, silent: true, workspace: true }))
-
       config.files &&
         (await Promise.allSettled(
           config.files.map(async (file) => {
