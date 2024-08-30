@@ -19,7 +19,7 @@ export const lintStagedConfig = {
 
       content: `
       export default {
-  '*': 'eslint --fix',
+  '{tsx,ts,jsx,js,json}': 'eslint --fix',
 }
 `,
     },
