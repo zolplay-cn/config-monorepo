@@ -2,7 +2,7 @@
   "name": "@zolplay/config-monorepo",
   "version": "2.0.0-beta.15",
   "private": true,
-  "packageManager": "pnpm@9.6.0",
+  "packageManager": "pnpm@9.12.1",
   "scripts": {
     "lint": "eslint .",
     "inspect": "npx @eslint/config-inspector --config ./packages/eslint/index.ts",
@@ -12,12 +12,12 @@
     "release": "bumpp --r && pnpm -r publish --access public"
   },
   "devDependencies": {
-    "@types/node": "^20.14.12",
+    "@types/node": "^20.16.11",
     "@zolplay/eslint-config": "workspace:*",
     "@zolplay/prettier-config": "workspace:*",
-    "bumpp": "^9.4.1",
-    "eslint": "^9.8.0",
+    "bumpp": "^9.6.1",
+    "eslint": "^9.12.0",
     "prettier": "^3.3.3",
-    "typescript": "^5.5.4"
+    "typescript": "^5.6.3"
   }
 }

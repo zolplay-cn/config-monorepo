@@ -24,17 +24,17 @@
     "eslint-plugin-svg-jsx": "^1.2.4"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^2.24.0",
+    "@antfu/eslint-config": "^3.7.3",
     "@eslint/eslintrc": "^3.1.0",
-    "@next/eslint-plugin-next": "^14.2.5",
-    "@tanstack/eslint-plugin-query": "^5.51.15",
-    "eslint-config-next": "^14.2.5",
+    "@next/eslint-plugin-next": "^14.2.15",
+    "@tanstack/eslint-plugin-query": "^5.59.2",
+    "eslint-config-next": "^14.2.15",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-tailwindcss": "^3.17.4"
   },
   "devDependencies": {
     "@types/eslint__eslintrc": "^2.1.2",
-    "tsup": "^8.2.3"
+    "tsup": "^8.3.0"
   }
 }
